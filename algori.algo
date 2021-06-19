@@ -1,0 +1,25 @@
+ALGORITHM sentence
+VAR
+    l:INTEGER;
+    sent:STRING;
+    nb-w,nb-v,nb-c:INTEGER;
+BEGIN
+    REPEAT
+       l:=sent.length-1;
+       Read(snet);
+    UNTIL (sent[l]=".")
+    nb-c=nb-c-1;
+    FOR i FROM 0 TO l STEP step  DO
+      IF (sent[i] =" ") THEN
+          nb-w=nb-w+1;
+          nb-c=nb-c-1;
+      END_IF
+      IF (sent[i]="a"OR"e"OR"y"OR"u"OR"i"OR"o"OR"A"OR"E"OR"Y"OR"U"OR"I"OR"O") THEN
+          nb-v=nb-v+1;
+      END_IF
+    END_FOR
+    Write("number of chara:" +nb-c);
+    Write("number of vowels:" +nb-v);
+    Write("number of words:" +nb-w);
+
+END
